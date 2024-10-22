@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Driven Skill Development - Empowerment Hub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .container-fluid {
+      padding: 0;
+    }
+
+    .header {
+      text-align: center;
+      padding: 100px 0;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: white;
+      border-radius: 0 0 50% 50% / 100px;
+    }
+
+    .header h1 {
+      font-size: 3.5em;
+      margin: 0;
+      font-weight: 600;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .header img {
+      max-width: 200px;
+      margin-bottom: 40px;
+      filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+    }
+
+    .skill-tree {
+      padding: 100px 0;
+      background-color: #ffffff;
+      border-radius: 30px;
+      margin: 40px auto;
+      position: relative;
+      overflow: visible;
+      width: 90%;
+      height: 3000px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .skill-node {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      position: absolute;
+      z-index: 2;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .skill-node:hover {
+      transform: scale(1.1);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .skill-node i {
+      font-size: 3em;
+      color: white;
+    }
+
+    .skill-node:nth-child(3n+1) {
+      background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+    }
+
+    .skill-node:nth-child(3n+2) {
+      background: linear-gradient(135deg, #4ECDC4 0%, #45B7D1 100%);
+    }
+
+    .skill-node:nth-child(3n+3) {
+      background: linear-gradient(135deg, #7F7FD5 0%, #86A8E7 100%);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 50px 0;
+      background-color: #2c3e50;
+      color: white;
+      border-radius: 50% 50% 0 0 / 100px;
+      margin-top: 80px;
+    }
+
+    .footer p {
+      margin: 0;
+      font-weight: 300;
+    }
+
+    .side-box {
+      position: absolute;
+      width: 300px;
+      height: 250px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.3em;
+      color: #333;
+      text-align: center;
+      padding: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .side-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .side-box-left {
+      left: 50px;
+    }
+
+    .side-box-right {
+      right: 50px;
+    }
+
+    .taskbar {
+      background-color: #2c3e50;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    .taskbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+      transition: all 0.3s;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #34495e;
+      display: inline-block;
+    }
+
+    .taskbar a:hover {
+      background-color: #3498db;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .taskbar a:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+
+    .modal-content {
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-header {
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: white;
+      border-radius: 20px 20px 0 0;
+    }
+
+    .btn-start-skill {
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .btn-start-skill:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="taskbar">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="skillDev.html">Skill Development</a>
+    <a href="careerPathing.html">Career Pathing</a>
+    <a href="reverseMentorship.html ">Reverse Mentorship</a>
+  </div>
+
+  <header class="header">
+    <img src="path_to_your_logo.png" alt="Empowerment Hub Logo" class="animate__animated animate__fadeInDown">
+    <h1 class="animate__animated animate__fadeInUp">AI-Driven Skill Development</h1>
+  </header>
+
+  <div class="container-fluid">
+    <section class="skill-tree">
+      <div id="skillNodes"></div>
+      <div class="side-box side-box-left" style="top: 100px;">
+        <p>Explore new skills and expand your knowledge horizons with our AI-driven learning paths!</p>
+      </div>
+      <div class="side-box side-box-right" style="top: 400px;">
+        <p>Track your progress, set ambitious learning goals, and watch yourself grow professionally!</p>
+      </div>
+      <div class="side-box side-box-left" style="top: 700px;">
+        <p>Unlock achievements and earn badges as you master new skills. Showcase your expertise!</p>
+      </div>
+      <div class="side-box side-box-right" style="top: 1000px;">
+        <p>Connect with industry mentors and fellow learners. Build your professional network!</p>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2023 Empowerment Hub | Transforming Careers, Empowering Lives</p>
+    <p>All rights reserved.</p>
+  </footer>
+
+  <!-- Skill Modal -->
+  <div class="modal fade" id="skillModal" tabindex="-1" aria-labelledby="skillModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="skillModalLabel">Skill Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h4 id="skillName"></h4>
+          <p id="skillDescription"></p>
+          <div class="progress mb-3">
+            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
+              aria-valuemax="100">0%</div>
+          </div>
+          <button class="btn btn-start-skill">Start Learning</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Skill data
+    const skillData = [
+      { name: 'Web Development', icon: 'fas fa-code', description: 'Learn to create responsive and interactive websites using HTML, CSS, and JavaScript.' },
+      { name: 'Database Management', icon: 'fas fa-database', description: 'Master the art of organizing and managing data efficiently using various database systems.' },
+      { name: 'UI/UX Design', icon: 'fas fa-paint-brush', description: 'Develop skills to create user-friendly and visually appealing interfaces for digital products.' },
+      { name: 'Project Management', icon: 'fas fa-tasks', description: 'Learn to plan, execute, and oversee projects from inception to completion.' },
+      { name: 'Machine Learning', icon: 'fas fa-brain', description: 'Dive into the world of AI and learn to create algorithms that can learn and improve from data.' },
+      { name: 'Data Analysis', icon: 'fas fa-chart-bar', description: 'Develop skills to interpret complex data sets and derive meaningful insights.' },
+      { name: 'Cloud Computing', icon: 'fas fa-cloud', description: 'Learn about cloud services and how to deploy and manage applications in the cloud.' },
+      { name: 'Agile Methodologies', icon: 'fas fa-sync-alt', description: 'Master the principles of Agile and Scrum for efficient project management.' },
+      { name: 'Big Data', icon: 'fas fa-database', description: 'Explore techniques for processing and analyzing large volumes of data.' },
+      { name: 'Cybersecurity', icon: 'fas fa-shield-alt', description: 'Learn to protect systems, networks, and programs from digital attacks.' },
+      { name: 'Mobile App Development', icon: 'fas fa-mobile-alt', description: 'Create applications for mobile devices using various platforms and technologies.' },
+      { name: 'DevOps', icon: 'fas fa-infinity', description: 'Bridge the gap between development and operations for faster and more reliable software delivery.' }
+    ];
+
+    // Create skill nodes
+    const skillNodesContainer = document.getElementById('skillNodes');
+    skillData.forEach((skill, index) => {
+      const node = document.createElement('div');
+      node.className = 'skill-node';
+      node.setAttribute('data-bs-toggle', 'modal');
+      node.setAttribute('data-bs-target', '#skillModal');
+      node.setAttribute('data-skill', skill.name);
+      node.innerHTML = `<i class="${skill.icon}"></i>`;
+
+      // Position nodes along the S-curve
+      const progress = index / (skillData.length - 1);
+      const x = 800 + Math.sin(progress * Math.PI * 2) * 300;
+      const y = progress * 2800;
+      node.style.left = `${x}px`;
+      node.style.top = `${y}px`;
+
+      skillNodesContainer.appendChild(node);
+    });
+
+    // Modal functionality
+    const skillModal = document.getElementById('skillModal');
+    skillModal.addEventListener('show.bs.modal', function (event) {
+      const button = event.relatedTarget;
+      const skill = button.getAttribute('data-skill');
+      const modalTitle = skillModal.querySelector('.modal-title');
+      const skillName = skillModal.querySelector('#skillName');
+      const skillDescription = skillModal.querySelector('#skillDescription');
+
+      const skillInfo = skillData.find(s => s.name === skill);
+
+      modalTitle.textContent = skill;
+      skillName.textContent = skill;
+      skillDescription.textContent = skillInfo.description;
+
+      // Simulate progress (replace with actual progress tracking)
+      const progressBar = skillModal.querySelector('.progress-bar');
+      const progress = Math.floor(Math.random() * 101);
+      progressBar.style.width = progress + '%';
+      progressBar.setAttribute('aria-valuenow', progress);
+      progressBar.textContent = progress + '%';
+    });
+
+    // Start Learning button functionality
+    const startButton = document.querySelector('.btn-start-skill');
+    startButton.addEventListener('click', function () {
+      alert('Starting your personalized learning path for this skill!');
+      // Here you would typically redirect to a learning module or update the user's learning path
+    });
+  </script>
+</body>
+
+</html>

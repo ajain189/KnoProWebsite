@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reverse Mentorship - Empowerment Hub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .taskbar {
+      background-color: #2c3e50;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    .taskbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+      transition: all 0.3s;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #34495e;
+      display: inline-block;
+    }
+
+    .taskbar a:hover {
+      background-color: #3498db;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .taskbar a:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+
+    .header {
+      text-align: center;
+      padding: 100px 0;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: white;
+      border-radius: 0 0 50% 50% / 100px;
+    }
+
+    .header h1 {
+      font-size: 3.5em;
+      margin: 0;
+      font-weight: 600;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .header img {
+      max-width: 200px;
+      margin-bottom: 40px;
+      filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+    }
+
+    .mentorship-option {
+      background-color: #ffffff;
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .mentorship-option:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .mentorship-option h3 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .mentorship-option p {
+      color: #34495e;
+      margin-bottom: 20px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .section {
+      background-color: #ffffff;
+      border-radius: 15px;
+      padding: 40px;
+      margin-top: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .section h2 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .section ul {
+      color: #34495e;
+      padding-left: 20px;
+    }
+
+    .section p {
+      color: #34495e;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="taskbar">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="skillDev.html">Skill Development</a>
+    <a href="careerPathing.html">Career Pathing</a>
+    <a href="reverseMentorship.html">Reverse Mentorship</a>
+  </div>
+
+  <header class="header">
+    <img src="path_to_your_logo.png" alt="Empowerment Hub Logo" class="animate__animated animate__fadeInDown">
+    <h1 class="animate__animated animate__fadeInUp">Reverse Mentorship</h1>
+  </header>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="mentorship-option">
+          <h3><i class="fas fa-envelope"></i> Mentorship by Email</h3>
+          <p>Connect with mentors through structured email exchanges. Perfect for those who prefer written
+            communication.</p>
+          <button class="btn btn-primary">Choose This Option</button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="mentorship-option">
+          <h3><i class="fas fa-video"></i> Online Interview Mentorship</h3>
+          <p>Engage in live virtual sessions with mentors. Ideal for real-time interaction and immediate feedback.</p>
+          <button class="btn btn-primary">Choose This Option</button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="mentorship-option">
+          <h3><i class="fas fa-robot"></i> AI Chat Mentorship</h3>
+          <p>Get instant guidance from our AI mentor. Available 24/7 for personalized career advice.</p>
+          <button class="btn btn-primary">Choose This Option</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Why Choose Reverse Mentorship?</h2>
+      <ul>
+        <li>Identify and achieve your career goals</li>
+        <li>Receive personalized skill-building recommendations</li>
+        <li>Create custom learning paths tailored to your needs</li>
+        <li>Ensure fair promotions and pay through AI-driven company data analysis</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Become a Mentor</h2>
+      <p>Are you an expert in your field? Become a certified mentor and gain valuable experience that could lead to
+        higher chances of promotion within your company.</p>
+      <button class="btn btn-primary">Learn About Certification</button>
+    </div>
+
+    <div class="section">
+      <h2>Mock Interviews</h2>
+      <p>Practice makes perfect! Engage in mock interviews with our mentors or AI system to improve your interviewing
+        skills and receive constructive feedback.</p>
+      <button class="btn btn-primary">Schedule a Mock Interview</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

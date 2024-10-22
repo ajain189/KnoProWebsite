@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Pathing - Empowerment Hub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .taskbar {
+      background-color: #2c3e50;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    .taskbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+      transition: all 0.3s;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #34495e;
+      display: inline-block;
+    }
+
+    .taskbar a:hover {
+      background-color: #3498db;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .taskbar a:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+
+    .header {
+      text-align: center;
+      padding: 100px 0;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: white;
+      border-radius: 0 0 50% 50% / 100px;
+    }
+
+    .header h1 {
+      font-size: 3.5em;
+      margin: 0;
+      font-weight: 600;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .header img {
+      max-width: 200px;
+      margin-bottom: 40px;
+      filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+    }
+
+    .career-path-section {
+      padding: 50px 0;
+      background-color: #ffffff;
+      border-radius: 30px;
+      margin: 40px auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .career-path-card {
+      border: none;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .career-path-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .skills-resources-section {
+      display: none;
+      padding: 50px 0;
+      background-color: #ffffff;
+      border-radius: 30px;
+      margin: 40px auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .skill-item,
+    .resource-item {
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      margin-right: 10px;
+      color: #ffffff;
+      font-weight: 500;
+    }
+
+    .skill-item {
+      background-color: #3498db;
+    }
+
+    .resource-item {
+      background-color: #2ecc71;
+    }
+
+    .skill-item:hover,
+    .resource-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .skills-resources-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .skills-resources-title {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: #2c3e50;
+    }
+
+    .skills-resources-subtitle {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      color: #34495e;
+    }
+
+    .skills-list,
+    .resources-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="taskbar">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="skillDev.html">Skill Development</a>
+    <a href="careerPathing.html">Career Pathing</a>
+    <a href="reverseMentorship.html">Reverse Mentorship</a>
+  </div>
+
+  <header class="header">
+    <img src="path_to_your_logo.png" alt="Empowerment Hub Logo" class="animate__animated animate__fadeInDown">
+    <h1 class="animate__animated animate__fadeInUp">Career Pathing</h1>
+  </header>
+
+  <div class="container">
+    <section class="career-path-section">
+      <h2 class="text-center mb-5">Choose Your Career Path</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card career-path-card">
+            <div class="card-body text-center">
+              <i class="fas fa-code fa-3x mb-3"></i>
+              <h5 class="card-title">Software Developer</h5>
+              <button class="btn btn-primary mt-3" onclick="showSkillsAndResources('software-developer')">Explore
+                Path</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card career-path-card">
+            <div class="card-body text-center">
+              <i class="fas fa-chart-line fa-3x mb-3"></i>
+              <h5 class="card-title">Data Analyst</h5>
+              <button class="btn btn-primary mt-3" onclick="showSkillsAndResources('data-analyst')">Explore
+                Path</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card career-path-card">
+            <div class="card-body text-center">
+              <i class="fas fa-project-diagram fa-3x mb-3"></i>
+              <h5 class="card-title">Project Manager</h5>
+              <button class="btn btn-primary mt-3" onclick="showSkillsAndResources('project-manager')">Explore
+                Path</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills-resources" class="skills-resources-section">
+      <div class="skills-resources-content">
+        <h2 class="skills-resources-title">Skills and Resources</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <h3 class="skills-resources-subtitle">Skills to Learn</h3>
+            <div id="skills-list" class="skills-list"></div>
+          </div>
+          <div class="col-md-6">
+            <h3 class="skills-resources-subtitle">Learning Resources</h3>
+            <div id="resources-list" class="resources-list"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const careerPaths = {
+      'software-developer': {
+        skills: ['JavaScript', 'Python', 'SQL', 'Git', 'Agile Methodologies'],
+        resources: ['Codecademy', 'freeCodeCamp', 'LeetCode', 'GitHub', 'Udacity']
+      },
+      'data-analyst': {
+        skills: ['SQL', 'Python', 'Data Visualization', 'Statistical Analysis', 'Machine Learning'],
+        resources: ['Kaggle', 'DataCamp', 'Coursera', 'edX', 'Google Analytics Academy']
+      },
+      'project-manager': {
+        skills: ['Agile & Scrum', 'Risk Management', 'Budgeting', 'Stakeholder Management', 'MS Project'],
+        resources: ['PMI', 'Udemy', 'LinkedIn Learning', 'Coursera', 'edX']
+      }
+    };
+
+    function showSkillsAndResources(careerPath) {
+      const skillsList = document.getElementById('skills-list');
+      const resourcesList = document.getElementById('resources-list');
+      const skillsResourcesSection = document.getElementById('skills-resources');
+
+      skillsList.innerHTML = '';
+      resourcesList.innerHTML = '';
+
+      careerPaths[careerPath].skills.forEach(skill => {
+        const skillItem = document.createElement('div');
+        skillItem.className = 'skill-item';
+        skillItem.innerHTML = `<i class="fas fa-check-circle mr-2"></i> ${skill}`;
+        skillsList.appendChild(skillItem);
+      });
+
+      careerPaths[careerPath].resources.forEach(resource => {
+        const resourceItem = document.createElement('div');
+        resourceItem.className = 'resource-item';
+        resourceItem.innerHTML = `<i class="fas fa-external-link-alt mr-2"></i> ${resource}`;
+        resourcesList.appendChild(resourceItem);
+      });
+
+      skillsResourcesSection.style.display = 'block';
+      skillsResourcesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+
+</html>
