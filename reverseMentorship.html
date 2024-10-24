@@ -64,6 +64,24 @@
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     }
 
+    .header .logo-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .header .logo-container::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 220px;
+      height: 220px;
+      background-color: white;
+      border-radius: 50%;
+      z-index: -1;
+    }
+
     .header img {
       max-width: 200px;
       margin-bottom: 40px;
@@ -142,7 +160,9 @@
   </div>
 
   <header class="header">
-    <img src="image.webp" alt="Empowerment Hub Logo" class="animate__animated animate__fadeInDown">
+    <div class="logo-container">
+        <img src="image.webp" alt="Empowerment Hub Logo" id="header-logo">
+    </div>
     <h1 class="animate__animated animate__fadeInUp">Reverse Mentorship</h1>
   </header>
 
