@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empowerment Hub Dashboard</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
@@ -79,11 +79,19 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
+        .header .logo-container {
+            position: relative;
+            display: inline-block;
+            background-color: white;
+            border-radius: 50%;
+            padding: 20px;
+        }
+
         .header img {
             max-width: 200px;
-            margin-bottom: 40px;
             filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
             transition: all 0.3s;
+            border-radius: 50%;
         }
 
         .header img.sticky {
@@ -114,6 +122,72 @@
             font-size: 2.2em;
             margin: 0;
             font-weight: 300;
+        }
+
+        .progress-tracker-section {
+            background: linear-gradient(to bottom, #546e7a, #455a64);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            border-radius: 60px;
+            margin-top: 80px;
+        }
+
+        .progress-tracker-section p {
+            font-size: 1.5em;
+            margin: 0;
+            font-weight: 300;
+        }
+
+        .progress-tracker {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .progress-bar {
+            width: 80%;
+            background-color: #ddd;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 30px;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-bar-inner {
+            height: 100%;
+            width: 60%; /* Example progress percentage */
+            background-color: #3498db;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            border-radius: 20px;
+            position: relative;
+            font-weight: bold;
+        }
+
+        .progress-bar-inner::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 10px;
+            background-color: #3498db;
+            border-radius: 0 20px 20px 0;
+        }
+
+        .progress-bar-inner::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 10px;
+            background-color: #3498db;
+            border-radius: 20px 0 0 20px;
         }
 
         .reviews-section {
@@ -250,6 +324,146 @@
             background-color: #ff8f00;
             transform: translateY(-3px);
         }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .survey-modal {
+            display: none;
+            position: fixed;
+            z-index: 2;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .survey-modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+        .survey-close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .survey-close:hover,
+        .survey-close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .progress-label {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .info-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            font-size: 1em;
+            position: absolute;
+            right: 10px;
+            bottom: -15px; /* Adjusted to position at the bottom right of the tracker */
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        .info-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .info-modal {
+            display: none;
+            position: fixed;
+            z-index: 3;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .info-modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+        .info-close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .info-close:hover,
+        .info-close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -262,9 +476,20 @@
     </div>
     <div class="container">
         <header id="home" class="header">
-            <img src="https://via.placeholder.com/200" alt="Logo" id="header-logo">
+            <div class="logo-container">
+                <img src="image.webp" alt="Logo" id="header-logo">
+            </div>
             <h1 class="animate__animated animate__fadeInDown">Empowerment Hub Dashboard</h1>
         </header>
+        <section class="progress-tracker-section">
+            <h2 class="progress-label">Progress Tracker</h2>
+            <div class="progress-tracker" style="position: relative;">
+                <div class="progress-bar">
+                    <div class="progress-bar-inner">60%</div>
+                </div>
+                <button class="info-btn" id="infoBtn">i</button> <!-- Info button -->
+            </div>
+        </section>
         <section class="quote-section">
             <p class="animate__animated animate__fadeInUp">"Empowering individuals to achieve their full potential."</p>
         </section>
@@ -315,7 +540,7 @@
         </section>
         <section class="cta-section">
             <h2 class="animate__animated animate__fadeInDown">Ready to Empower Your Career?</h2>
-            <a href="#" class="btn btn-lg animate__animated animate__fadeInUp">Get Started Now</a>
+            <button class="btn btn-lg animate__animated animate__fadeInUp" id="getStartedBtn">Get Started Now</button>
         </section>
         <section id="contact" class="contact-section">
             <h2 class="animate__animated animate__fadeInLeft">Contact Us</h2>
@@ -328,6 +553,63 @@
             <p>&copy; 2024 Empowerment Hub. All rights reserved.</p>
         </footer>
     </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signUpForm">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password">
+                </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- The Survey Modal -->
+    <div id="surveyModal" class="survey-modal">
+        <div class="survey-modal-content">
+            <span class="survey-close">&times;</span>
+            <h2>Ruvery Survey</h2>
+            <form id="surveyForm">
+                <div class="mb-3">
+                    <label for="age" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="age">
+                </div>
+                <div class="mb-3">
+                    <label for="occupation" class="form-label">Occupation</label>
+                    <input type="text" class="form-control" id="occupation">
+                </div>
+                <div class="mb-3">
+                    <label for="experience" class="form-label">Years of Experience</label>
+                    <input type="number" class="form-control" id="experience">
+                </div>
+                <div class="mb-3">
+                    <label for="interests" class="form-label">Interests</label>
+                    <input type="text" class="form-control" id="interests">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Info Modal -->
+    <div id="infoModal" class="info-modal">
+        <div class="info-modal-content">
+            <span class="info-close">&times;</span> <!-- Ensure this class is correct -->
+            <h2>About the Progress Tracker</h2>
+            <p>Our progress tracker shows your advancement and areas for improvement. It uses AI to match your skills with market demands, helping you become more marketable.</p>
+            <p>AI Model Placeholder: This feature will analyze your progress and provide insights based on hiring trends.</p>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
     <script>
         window.onscroll = function () {
@@ -343,6 +625,109 @@
         window.addEventListener('load', function () {
             window.scrollTo(0, 0);
         });
+
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("getStartedBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Get the survey modal
+        var surveyModal = document.getElementById("surveyModal");
+
+        // Get the <span> element that closes the survey modal
+        var surveySpan = document.getElementsByClassName("survey-close")[0];
+
+        // When the user submits the sign-up form, open the survey modal
+        document.getElementById("signUpForm").onsubmit = function (event) {
+            event.preventDefault();
+            modal.style.display = "none";
+            surveyModal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the survey modal
+        surveySpan.onclick = function () {
+            surveyModal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the survey modal, close it
+        window.onclick = function (event) {
+            if (event.target == surveyModal) {
+                surveyModal.style.display = "none";
+            }
+        }
+
+        // When the user submits the survey form, close the survey modal and reload the page
+        document.getElementById("surveyForm").onsubmit = function (event) {
+            event.preventDefault();
+            surveyModal.style.display = "none";
+            alert("Thank you for completing the survey!");
+            window.location.reload();
+        }
+
+        // Info Modal
+        document.getElementById("infoBtn").onclick = function () {
+            document.getElementById("infoModal").style.display = "block";
+        }
+
+        document.getElementById("info-close").onclick = function () {
+            document.getElementById("infoModal").style.display = "none";
+        }
+
+        // Get the info modal
+        var infoModal = document.getElementById("infoModal");
+
+        // Get the button that opens the info modal
+        var infoBtn = document.getElementById("infoBtn");
+
+        // Get the <span> element that closes the info modal
+        var infoClose = document.querySelector(".info-close");
+
+        // When the user clicks the button, open the info modal
+        infoBtn.onclick = function () {
+            infoModal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the info modal
+        infoClose.onclick = function () {
+            infoModal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the info modal, close it
+        window.onclick = function (event) {
+            if (event.target == infoModal) {
+                infoModal.style.display = "none";
+            }
+        }
+
+        // Placeholder for AI implementation
+        function calculateProgress() {
+            // This function will use AI to calculate progress
+            console.log("AI model would process data here.");
+        }
+
+        // Call the placeholder function
+        calculateProgress();
     </script>
 </body>
 
